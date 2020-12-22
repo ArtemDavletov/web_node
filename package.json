@@ -1,0 +1,35 @@
+{
+  "name": "web_labs",
+  "version": "1.0.0",
+  "description": "Wather application for web course",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtemDavletov/weather.github.io.git"
+  },
+  "keywords": [
+    "web_course",
+    "weather",
+    "node.js"
+  ],
+  "author": "Artem Davletov <artemiidav@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtemDavletov/weather.github.io/issues"
+  },
+  "homepage": "https://github.com/ArtemDavletov/weather.github.io#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "mongoose": "^5.11.8",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
