@@ -23,7 +23,7 @@ app.use(favoritesRoutes)
 
 async function start() {
     try {
-        await mongoose.connect('mongodb+srv://artem:3558266@cluster0.xnqzf.mongodb.net/weather', {
+        await mongoose.connect('', {
             useNewUrlParserL: true,
             useFindAndModify: false
         })
