@@ -1,36 +1,4 @@
 const fetch = require("node-fetch");
-// const fetch = require('isomorphic-fetch');
-
-function fetchWithTimeout(resource, options) {
-    const { timeout = 5000 } = options;
-
-    const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), timeout);
-
-    const response = fetch(resource, {
-        ...options,
-        signal: controller.signal
-    });
-    clearTimeout(id);
-
-    return response;
-}
-
-// function request(params) {
-//     // const params = ['q=' + key]
-//     params.push('units=metric');
-//     params.push('appid=90ce88aa9b0fb76fbb80ec7191353a97');
-//     const url = 'https://api.openweathermap.org/data/2.5/weather' + '?' + params.join('&');
-//     return fetch(url).then((response) => {
-//         if (response.ok) {
-//             return response.json();
-//         } else {
-//             return {error: 404};
-//         }
-//     }).catch(() => {
-//         return {error: 503};
-//     });
-// }
 
 function request(queryParams) {
     const base = 'https://api.openweathermap.org/data/2.5/weather';
@@ -52,12 +20,13 @@ function request(queryParams) {
 function processResponse(jsonResponse) {
     return {
         temp: Math.floor(jsonResponse.main.temp),
-        place: jsonResponse.name,
+        name: jsonResponse.name,
         windSpeed: jsonResponse.wind.speed,
         windDir: jsonResponse.wind.deg,
         clouds: jsonResponse.clouds.all,
         pressure: jsonResponse.main.pressure,
         humidity: jsonResponse.main.humidity,
+        icon: jsonResponse.weather[0]['icon'],
         lat: jsonResponse.coord.lat,
         lon: jsonResponse.coord.lon
     }
@@ -73,4 +42,4 @@ function reply(query, res) {
     });
 }
 
-module.exports = { reply, request, processResponse };
+module.exports = { reply };

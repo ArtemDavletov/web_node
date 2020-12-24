@@ -23,11 +23,17 @@
   },
   "homepage": "https://github.com/ArtemDavletov/weather.github.io#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "isomorphic-fetch": "^3.0.0",
     "mongoose": "^5.11.8",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "npm": "^6.14.10",
+    "swagger": "^0.7.5",
+    "swagger-jsdoc": "^6.0.0",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

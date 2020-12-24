@@ -1,0 +1,254 @@
+.currentCity, .favourites {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.currentCityHeader, .currentCityBody, .favouritesHeader {
+    padding: 0 10px;
+}
+
+.favouriteCity, .currentCityItems {
+    flex-basis: 100%;
+}
+
+@media only screen and (min-width: 910px) {
+
+    .currentCity, .favourites {
+        max-width: 910px;
+    }
+
+    .favouriteCity, .currentCityItems {
+        flex-basis: 45%;
+    }
+
+}
+
+/* current city */
+.currentCityBody{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 165px;
+}
+
+.currentCityBodyInfo {
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.currentCityBody h2 {
+    margin: 0;
+    width: 100%;
+}
+
+/* Main info for current city */
+.currentCityName {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.currentCityTemperature {
+    font-size: 60px;
+    margin: 0;
+}
+
+.currentCityPicture {
+    width: 80px;
+    margin-left: 20px;
+}
+
+/* City items */
+.cityItemPoint {
+    display: flex;
+    margin-top: 5px;
+    background-color: #a7afb1;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cityItemPointName {
+    margin: 0;
+    font-weight: bold;
+}
+
+.cityItemPointValue {
+    margin: 0 0 0 auto;
+}
+
+.currentCityHeader, .favouritesHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* */
+ul.favouritesCities {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li.favouriteCity {
+    padding: 0;
+    border-radius: 5px;
+    margin: 10px;
+    /*height: 165px;*/
+    width: 390px;
+}
+
+.favouriteCityHeader {
+    display: flex;
+    align-items: center;
+}
+
+.favouriteCityName {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.favouriteCityTemperature {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 0 0.5em;
+}
+
+.favouriteCityWeatherPicture {
+    width: 44px;
+    margin-left: 1em;
+}
+
+button {
+    font-size: 200%;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+input.addFavorite {
+    font-size: 175%;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+input {
+    vertical-align: middle;
+}
+
+/*button:hover, input.addFavorite:hover {*/
+/*    color: aliceblue;*/
+/*}*/
+
+ul {
+    padding-left: 0;
+    margin-left: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+/*Spinner*/
+.lds-spinner {
+    color: white;
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    left: 50%;
+    margin-left: -32px;
+    vertical-align: middle;
+}
+.lds-spinner div {
+    transform-origin: 32px 32px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 29px;
+    width: 5px;
+    height: 14px;
+    border-radius: 20%;
+    background: #a7afb1;
+}
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
