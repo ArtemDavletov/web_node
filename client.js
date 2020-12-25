@@ -2,18 +2,23 @@ const SPINNER = `<div class="lds-spinner">
                     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                  </div>`;
 
-let refreshForm = document.forms.namedItem('refresh');
-let addCityForm = document.forms.namedItem('addFavorite');
+function init() {
+    let refreshForm = document.forms.namedItem('refresh');
+    let addCityForm = document.forms.namedItem('addFavorite');
 
-refreshForm.addEventListener('submit', (event) => {
+    refreshForm.addEventListener('submit', (event) => {
+        getLocation();
+        event.preventDefault();
+    });
+
+    addCityForm.addEventListener('submit', (event) => {
+        addNewCity(event.target);
+        event.preventDefault();
+    });
+
     getLocation();
-    event.preventDefault();
-});
-
-addCityForm.addEventListener('submit', (event) => {
-    addNewCity(event.target);
-    event.preventDefault();
-});
+    addSavedCities();
+}
 
 function split(cityName) {
     return cityName.split(' ').join('-');
@@ -193,9 +198,6 @@ function fillCurrentCityUlTemplate(favoriteItemElement, params) {
     return favoriteItemElement;
 }
 
-getLocation();
-addSavedCities();
-
 module.exports = {
-    getLocation, fillCurrentCityTemplate, appendCityTemplate, request, init
+    getLocation, fillCurrentCityTemplate, appendCityTemplate, request, init, split
 }
