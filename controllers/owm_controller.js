@@ -22,7 +22,6 @@ function processResponse(jsonResponse) {
         temp: Math.floor(jsonResponse.main.temp),
         name: jsonResponse.name,
         windSpeed: jsonResponse.wind.speed,
-        windDir: jsonResponse.wind.deg,
         clouds: jsonResponse.clouds.all,
         pressure: jsonResponse.main.pressure,
         humidity: jsonResponse.main.humidity,
@@ -42,4 +41,4 @@ function reply(query, res) {
     });
 }
 
-module.exports = { reply };
+module.exports = { reply, request, processResponse };

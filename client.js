@@ -41,6 +41,8 @@ function request(params) {
     return fetch(url).then((response) => {
         if (response.ok) {
             return response.json();
+        } else if(response.status === 404) {
+            alert('No such city with name ' + params[0].substr(2));
         } else {
             alert('Something went wrong');
         }
@@ -102,6 +104,9 @@ function addNewCity(target) {
             } else if (response.status === 400) {
                 newCity.remove();
                 alert('City exists in favorites');
+            } else if (response.status === 404) {
+                newCity.remove();
+                alert('No such city with name ' + jsonResult.name);
             } else {
                 newCity.remove();
                 alert('Something going wrong');
@@ -190,3 +195,7 @@ function fillCurrentCityUlTemplate(favoriteItemElement, params) {
 
 getLocation();
 addSavedCities();
+
+module.exports = {
+    getLocation, fillCurrentCityTemplate, appendCityTemplate, request, init
+}

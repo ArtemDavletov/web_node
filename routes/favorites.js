@@ -25,10 +25,16 @@ router.post('/favorites', async (req, res) => {
         if (array.length !== 0) {
             res.sendStatus(400);
         } else {
-            const favorite = new Favorites({name: req.body.name})
-            await favorite.save()
 
-            owm.reply({'q': req.body.name}, res)
+            owm.request({'q': req.body.name}).then(async (result) => {
+                if (result.hasOwnProperty('error')) {
+                    res.sendStatus(result.error);
+                } else {
+                    const favorite = new Favorites({name: req.body.name})
+                    await favorite.save()
+                    res.send(owm.processResponse(result));
+                }
+            });
         }
 
     } catch {
